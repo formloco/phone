@@ -1,0 +1,10 @@
+<div class="column" [ngStyle]="{'background-color': appService.canvasBackground}" fxFlexFill>
+  <div><app-header (toggleTheme)="toggleTheme()"></app-header></div>
+  <div><app-welcome *ngIf="!appService.isSignin && !appService.isPin"></app-welcome></div>
+  <app-pin *ngIf="appService.isPin"></app-pin>
+  <app-form *ngIf="!appService.isSignin && !appService.isPin"></app-form>
+  <app-admin *ngIf="appService.isSignin && !appService.isPin"></app-admin>
+</div>
+<footer>
+  <app-footer></app-footer>
+</footer>
